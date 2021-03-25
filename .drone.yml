@@ -1,0 +1,86 @@
+---
+kind: pipeline
+type: docker
+name: aliyun-linux-arm64
+
+platform:
+  arch: arm64
+  os: linux
+
+steps:
+- name: publish
+  image: plugins/docker
+  settings:
+    tags: 
+      - aliyun-arm64
+      - arm64
+    dockerfile: aarch64/Dockerfile.aliyun
+    repo: wryjer/alpine
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+
+trigger:
+  event:
+    - push
+    - tag
+---
+kind: pipeline
+type: docker
+name: ustc-linux-arm64
+
+platform:
+  arch: arm64
+  os: linux
+
+steps:
+- name: publish
+  image: plugins/docker
+  settings:
+    tags: 
+      - ustc-arm64
+    dockerfile: aarch64/Dockerfile.ustc
+    repo: wryjer/alpine
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+
+trigger:
+  event:
+    - push
+    - tag
+
+depends_on:
+    - aliyun-linux-arm64
+---
+kind: pipeline
+type: docker
+name: tsinghua-linux-arm64
+
+platform:
+  arch: arm64
+  os: linux
+
+steps:
+- name: publish
+  image: plugins/docker
+  settings:
+    tags:
+      - tsinghua-arm64
+    dockerfile: aarch64/Dockerfile.tsinghua
+    repo: wryjer/alpine
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+
+trigger:
+  event:
+    - push
+    - tag
+
+depends_on:
+    - ustc-linux-arm64
+
