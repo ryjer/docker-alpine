@@ -1,6 +1,6 @@
 # alpine docker image
 
-[![Build Status](https://cloud.drone.io/api/badges/wRyjer/docker-alpine/status.svg)](https://cloud.drone.io/wRyjer/docker-alpine)
+![Dockerhub buildx](https://github.com/ryjer/docker-alpine/workflows/Dockerhub%20buildx/badge.svg)
 
 配置了国内镜像源的 alpine 镜像
 以便于在国内
