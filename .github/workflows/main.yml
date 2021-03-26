@@ -1,4 +1,4 @@
-name: 'Dockerhub buildx'
+name: 'buildx'
 # Controls when the action will run. 
 on:
 #  push:
