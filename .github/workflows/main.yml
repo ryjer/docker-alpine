@@ -1,8 +1,8 @@
 name: 'Dockerhub buildx'
 # Controls when the action will run. 
 on:
-  push:
-    branches: [ master ]
+#  push:
+#    branches: [ master ]
   pull_request:
     branches: [ master ]
   # 每月27号，4:27 执行一次

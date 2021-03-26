@@ -1,6 +1,7 @@
 # alpine docker image
 
 ![Dockerhub buildx](https://github.com/ryjer/docker-alpine/workflows/Dockerhub%20buildx/badge.svg)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ryjer/alpine.svg)](https://hub.docker.com/r/ryjer/alpine/)
 
 配置了国内镜像源的 alpine 镜像
 以便于在国内
