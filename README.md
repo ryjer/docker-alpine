@@ -4,9 +4,9 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/ryjer/alpine.svg)](https://hub.docker.com/r/ryjer/alpine/)
 
 配置了国内镜像源的 alpine 镜像
-以便于在国内
+以便于在国内使用
 
-分别配置了以下镜像源地址
+配置了以下镜像源地址，使得源配置文件中同时拥有 alpine官方源和以下三个源（共4个源）
 - 阿里云镜像：
 ```bash
 https://mirrors.aliyun.com/alpine/v3.6/main/

@@ -3,14 +3,14 @@ on:
   push:
 #    branches: [ master ]
     paths:
-    - Dockerfile
+    - 3.13/Dockerfile
   pull_request:
     branches: [ master ]
   schedule:
   # 每月27号，4:12 执行一次
   #  - cron: '12 4 27 * *'
-  # 每周六，4:12 执行一次，以同步官方latest
-    - cron: '12 4 * * SAT'
+  # 每周六，4:33 执行一次，以同步官方 alpine 3.13
+    - cron: '33 4 * * SAT'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -44,16 +44,17 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       # 编译并推送到 dockerhub
       - name: Build and push
+        id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: 3.13
           file: Dockerfile
           platforms: linux/386,linux/amd64,linux/arm64,linux/arm/v7,linux/ppc64le,linux/s390x
           push: true
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
           tags: |
-            ryjer/alpine:latest
+            ryjer/alpine:3.13
       # 处理缓存无限增大问题的临时修复，以防出现问题。（等待github官方修复）
       - name: Move cache
         run: |
