@@ -2,7 +2,9 @@
 
 ![buildx](https://github.com/ryjer/docker-alpine/workflows/buildx-latest/badge.svg)
 ![buildx](https://github.com/ryjer/docker-alpine/workflows/buildx-3.13/badge.svg)
+[![Docker Stars](https://img.shields.io/docker/stars/ryjer/alpine.svg)](https://hub.docker.com/r/ryjer/alpine/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/ryjer/alpine.svg)](https://hub.docker.com/r/ryjer/alpine/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 配置了国内镜像源的 alpine 镜像
 以便于在国内使用
