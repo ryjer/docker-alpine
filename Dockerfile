@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:latest
 
 # 重置 源文件
 RUN echo https://dl-cdn.alpinelinux.org/alpine/v3.13/main > /etc/apk/repositories && \
